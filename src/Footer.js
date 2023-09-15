@@ -5,10 +5,10 @@ function Footer() {
         <footer className='row justify-content-center'>
             <div className='col text-center'>
                 <div className='social-icons'>
-                    <img className='icon-item' src='fa-brands_facebook-square.png' alt=''/>
-                    <img className='icon-item' src='fa-brands_instagram.png' alt=''/>
-                    <img className='icon-item' src='fa-brands_twitter.png' alt=''/>
-                    <img className='icon-item' src='fa-brands_youtube.png' alt=''/>
+                    <img className='icon-item' src='/fa-brands_facebook-square.png' alt='' />
+                    <img className='icon-item' src='/fa-brands_instagram.png' alt='' />
+                    <img className='icon-item' src='/fa-brands_twitter.png' alt='' />
+                    <img className='icon-item' src='/fa-brands_youtube.png' alt='' />
                 </div>
                 <div className='footer-menu'>
                     <span className='footer-menu-item'>Conditions of Use</span>

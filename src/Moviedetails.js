@@ -5,6 +5,8 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Nav from './Nav';
+import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 function Moviedetails() {
     const { id } = useParams();
@@ -44,7 +46,20 @@ function Moviedetails() {
             ) : (
                 <div>
                     <div className="details-nav">
-                        <Nav />
+                        <nav>
+                            <Link to={`/`}>
+                                <img src="/Logo-black.png" alt="" className="header-logo" />
+                            </Link>
+                            <input type="text" className="searchbar" placeholder="What do you want to watch next?" />
+                            <div>
+                                <ul className="nav">
+                                    <li className="nav-item">Sign in</li>
+                                    <li className="nav-item">
+                                        <img src="Menu.png" alt="" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
                     </div>
                     <div className="details-page">
                         <div className="details-poster-div shadow">
@@ -55,11 +70,12 @@ function Moviedetails() {
                                 <div className="details-first-div">
                                     <span className="details-movie-title">{movie.original_title}</span> &nbsp;• &nbsp;
                                     <span className="details-release-date">{new Date(movie.release_date).getFullYear()}</span> &nbsp;• &nbsp;
-                                    <span className="details-runtime">{(movie.runtime)}</span>
+                                    <span className="details-runtime">{(movie.runtime)} mins</span>
                                 </div>
                                 <div className="details-imdb-ratings">
-                                    <img src="imdb.png" alt="" className="pr-1" /> {movie.vote_average} / 10
-                                    <img src="tomatoes.png" alt="" className="pr-1" /> {(movie.popularity / 100).toFixed(2)}%
+                                    <img src="/imdb.png" alt="" className="pr-1" /> {movie.vote_average} / 10
+                                    <span className='spacer-35'></span>
+                                    <img src="/tomatoes.png" alt="" className="pr-1" /> {(movie.popularity / 100).toFixed(2)}%
                                 </div>
                             </div>
                             <div className="row">
@@ -75,11 +91,12 @@ function Moviedetails() {
                                 <div className="col-md-3 aside">
                                     <a className="btn btn-danger trailer-btn showtime mb-2" href="/" role="button">See Showtimes</a>
                                     <a className="btn btn-danger trailer-btn more-watch" href="/" role="button">More watch options</a>
-                                    <img alt='top rated' className='mt-3' src='top-3-movies.png' />
+                                    <img alt='top rated' className='mt-3 top-rated' src='/top-3-movies.png' />
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <Footer />
                 </div>
             )}
         </div>

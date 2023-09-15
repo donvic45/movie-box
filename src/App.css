@@ -2,6 +2,7 @@
 
 body {
   font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 nav {
@@ -33,7 +34,7 @@ nav {
 .searchbar::placeholder {
   color: #fff;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 #top-5 {
@@ -207,6 +208,7 @@ nav {
 
 footer {
   padding: 50px 0;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .icon-item {
@@ -241,6 +243,7 @@ footer {
 
 .details-page {
   padding: 20px 50px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .details-poster-div {
@@ -298,4 +301,26 @@ footer {
 .more-watch {
   background: rgba(190, 18, 60, 0.1) !important;
   color: rgba(51, 51, 51, 1) !important;
+}
+
+.details-nav .searchbar {
+  border: 2px solid var(--gray-300, #333333);
+}
+
+.details-nav .searchbar::placeholder {
+  color: #333333;
+}
+
+.details-nav .nav-item {
+  color: #333333;
+}
+
+.details-page .top-rated {
+  width: 100%;
+}
+
+.details-imdb-ratings {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
 }
