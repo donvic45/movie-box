@@ -33,13 +33,7 @@ function Moviedetails() {
             }
         };
 
-        fetchMovieDetails();
-
-        const convertMinutesToHoursAndMinutes = (minutes) => {
-            const hours = Math.floor(minutes / 60);
-            const remainingMinutes = minutes % 60;
-            return `${hours}h ${remainingMinutes}m`;
-        }
+        fetchMovieDetails()
 
     }, [id]);
 
@@ -61,7 +55,7 @@ function Moviedetails() {
                                 <div className="details-first-div">
                                     <span className="details-movie-title">{movie.original_title}</span> &nbsp;• &nbsp;
                                     <span className="details-release-date">{new Date(movie.release_date).getFullYear()}</span> &nbsp;• &nbsp;
-                                    <span className="details-runtime">{convertMinutesToHoursAndMinutes(movie.runtime)}</span>
+                                    <span className="details-runtime">{(movie.runtime)}</span>
                                 </div>
                                 <div className="details-imdb-ratings">
                                     <img src="imdb.png" alt="" className="pr-1" /> {movie.vote_average} / 10
