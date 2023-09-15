@@ -68,9 +68,9 @@ function Moviedetails() {
                         <div className="details-main-contents">
                             <div className="d-flex justify-content-between">
                                 <div className="details-first-div">
-                                    <span className="details-movie-title">{movie.original_title}</span> &nbsp;• &nbsp;
-                                    <span className="details-release-date">{new Date(movie.release_date).getFullYear()}</span> &nbsp;• &nbsp;
-                                    <span className="details-runtime">{(movie.runtime)} mins</span>
+                                    <span className="details-movie-title" data-testid="movie-title">{movie.original_title}</span> &nbsp;• &nbsp;
+                                    <span className="details-release-date" data-testid="movie-release-date">{new Date(movie.release_date).getFullYear()}</span> &nbsp;• &nbsp;
+                                    <span className="details-runtime" data-testid="movie-runtime">{(movie.runtime)} mins</span>
                                 </div>
                                 <div className="details-imdb-ratings">
                                     <img src="/imdb.png" alt="" className="pr-1" /> {movie.vote_average} / 10
@@ -80,7 +80,7 @@ function Moviedetails() {
                             </div>
                             <div className="row">
                                 <div className="col-md-9">
-                                    <p className="movie-desc">{movie.overview}</p>
+                                    <p className="movie-desc" data-testid="Amovie-overview">{movie.overview}</p>
                                     <div className="details-cast">
                                         <p>Director: <span className='red-text'>Joseph Kosinski</span></p>
                                         <p>Writers: <span className='red-text'>Jim Cash, Jack Epps Jr, Peter Craig</span></p>
@@ -89,8 +89,8 @@ function Moviedetails() {
                                     <a className="btn btn-danger trailer-btn" href="/" role="button">Top rated movie #65</a>
                                 </div>
                                 <div className="col-md-3 aside">
-                                    <a className="btn btn-danger trailer-btn showtime mb-2" href="/" role="button">See Showtimes</a>
-                                    <a className="btn btn-danger trailer-btn more-watch" href="/" role="button">More watch options</a>
+                                    <a className="btn btn-danger trailer-btn showtime mb-2" href="/" role="button"><img src='/two-tickets.png' alt="" /> &nbsp; See Showtimes</a>
+                                    <a className="btn btn-danger trailer-btn more-watch" href="/" role="button"><img src='/List.png' alt="" /> &nbsp; More watch options</a>
                                     <img alt='top rated' className='mt-3 top-rated' src='/top-3-movies.png' />
                                 </div>
                             </div>
