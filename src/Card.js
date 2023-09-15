@@ -66,30 +66,31 @@ function Card() {
     };
     return (
         <div className='movies row'>
-        {loading ? (
-            <p>Loading...</p>
-        ) : (
-            movies.map((movie) => (
+            {loading ? (
+                <p>Loading...</p>
+            ) : (
+                movies.map((movie) => (
                     <div className="col-md-3 movie-card" key={movie.id} data-test-id="movie-card">
-                        <Link to={`/movies/${movie.id}`}>
-                            <div className="mb-1 position-relative">
-                                <div className="like-btn" onClick={() => handleLikeClick(movie.id)} data-test-id="like-button" >
-                                    <img src={likedMovies.includes(movie.id) ? 'heart-liked.png' : 'heart-unliked.png'} alt='' />
-                                </div>
-                                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className='shadow movie-poster img-fluid' alt=""  data-test-id="movie-poster"/>
+
+                        <div className="mb-1 position-relative">
+                            <div className="like-btn" onClick={() => handleLikeClick(movie.id)} data-test-id="like-button" >
+                                <img src={likedMovies.includes(movie.id) ? 'heart-liked.png' : 'heart-unliked.png'} alt='' />
                             </div>
-                        </Link>
+                            <Link to={`/movies/${movie.id}`}>
+                                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className='shadow movie-poster img-fluid' alt="" data-test-id="movie-poster" />
+                            </Link>
+                        </div>
                         <span className="small-text location" data-test-id="movie-release-date">{movie.release_date}</span>
                         <p className="movie-title mb-0" data-test-id="movie-title">{movie.original_title}</p>
                         <div className="imdb-ratings d-flex justify-content-between">
                             <span><img src="imdb.png" alt="" className="inline-img pr-1" />{`${movie.vote_average * 10} / 100`}</span>
-                            <span><img src="tomatoes.png" alt="" className="inline-img pr-1" /> {(movie.popularity/100).toFixed(2)}%</span>
+                            <span><img src="tomatoes.png" alt="" className="inline-img pr-1" /> {(movie.popularity / 100).toFixed(2)}%</span>
                         </div>
                         <div className="small-text genre">{movie.genre_ids.map((genreId) => genres[genreId]).join(', ')}</div>
                     </div>
-            ))
-        )}
-    </div>
+                ))
+            )}
+        </div>
     )
 }
 
