@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,400;9..40,500;9..40,700&display=swap');
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+nav {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  padding: 20px 100px;
+  display: flex !important;
+  justify-content: space-between;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.nav-item {
+  padding: 0 10px;
+  color: #fff;
+  line-height: 2;
+}
+
+.searchbar {
+  width: 525px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid var(--gray-300, #D1D5DB);
+  padding: 6px 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.searchbar::placeholder {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#top-5 {
+  margin-top: -100px;
+  height: 630px;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.header-logo {
+  width: 150px;
+  height: 40px;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: #00000057;
+}
+
+.carousel-control-prev {
+  left: -40px !important;
+}
+
+.carousel-control-next {
+  right: -40px !important;
+}
+
+.carousel-text {
+  position: absolute;
+  left: 8%;
+  top: 14%;
+  height: 50%;
+  width: 100%;
+  z-index: 3;
+  color: #fff;
+}
+
+.movie-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-height: 5em;
+  white-space: normal;
+}
+
+#top-5 .movie-title {
+  font-size: 46px;
+  font-weight: 700;
+  width: 400px;
+  line-height: 1.2;
+}
+
+.imdb-ratings {
+  font-size: 12px;
+  padding: 10px 0 15px 0;
+}
+
+.spacer-35 {
+  display: inline-block;
+  width: 35px;
+}
+
+.carousel-img {
+  width: 100%;
+}
+
+.movie-desc {
+  font-size: 14px;
+  font-weight: 400;
+  width: 350px;
+  margin-bottom: 15px;
+}
+
+.trailer-btn {
+  padding: 6px 10px;
+  background: #BE123C !important;
+}
+
+.main-content {
+  padding: 100px 30px 50px 100px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.tag-line {
+  padding-right: 70px;
+  line-height: 10px;
+}
+
+.header-text {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000 !important;
+}
+
+.see-more {
+  font-size: 16px;
+  font-weight: 400;
+  color: #BE123C;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 2s;
+}
+
+.see-more:hover {
+  color: #5c081d;
+}
+
+.movie-card {
+  padding-right: 80px !important;
+  margin-bottom: 100px;
+}
+
+.movie-card .movie-poster {
+  border-radius: 7px;
+}
+
+.main-content .movie-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.main-content .small-text {
+  font-size: 12px;
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+.like-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 3px 5.5px;
+  width: 30px;
+  height: 30px;
+  background: #ffffff73;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.like-btn img {
+  width: 20px;
+}
+
+.like-icon {
+  background: url('../public/heart-unliked.png');
+  width: 100%;
+  height: 100%;
+}
+
+.spacer-95 {
+  display: inline-block;
+  width: 95px;
+}
+
+.pr-1 {
+  padding-right: 10px;
+}
+
+.pr-2 {
+  padding-right: 20px;
+}
+
+.main-content .imdb-ratings {
+  padding: 10px 0;
+}
+
+footer {
+  padding: 50px 0;
+}
+
+.icon-item {
+  padding: 0 25px;
+  cursor: pointer;
+}
+
+.footer-menu {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.social-icons {
+  margin-bottom: 40px;
+}
+
+.footer-menu-item {
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.copyright {
+  font-weight: 700;
+  color: #6B7280;
+  font-size: 17px;
+}
+
+.details-nav {
+  background-color: #00000000;
+}
+
+.details-page {
+  padding: 20px 50px;
+}
+
+.details-poster-div {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.details-poster-div img {
+  width: 100%;
+}
+
+.details-main-contents {
+  padding: 50px 100px;
+  width: 100%;
+}
+
+.details-first-div {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.details-page .movie-desc {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  max-height: 10em;
+  white-space: normal;
+  width: 100%;
+}
+
+.details-cast {
+  line-height: 2;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.red-text {
+  color: #BE123C;
+  font-weight: 400;
+}
+
+.aside .trailer-btn {
+  width: 100% !important;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.more-watch {
+  background: rgba(190, 18, 60, 0.1) !important;
+  color: rgba(51, 51, 51, 1) !important;
+}
