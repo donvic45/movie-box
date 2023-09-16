@@ -29,6 +29,7 @@ nav {
   padding: 6px 10px;
   border-radius: 5px;
   color: #fff;
+  position: relative;
 }
 
 .searchbar::placeholder {
@@ -322,5 +323,38 @@ footer {
 .details-imdb-ratings {
   font-size: 12px;
   line-height: 1.5;
+  font-weight: 500;
+}
+
+.search-results {
+  min-height: 200px;
+  max-height: 70vh;
+  overflow: auto;
+  position: absolute;
+  top: 58px;
+  width: 525px;
+  background: white;
+  border-radius: 0 0 6px 6px;
+  transition: all 2s;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.search-card {
+  width: 25%;
+  height: 190%;
+  margin-bottom: 10px;
+}
+
+.search-card h2 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.search-card p {
+  font-size: 10px;
   font-weight: 500;
 }
