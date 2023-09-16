@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-function Nav() {
+function Nav({ logoSrc }) {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
     const [showResults, setShowResults] = useState(false);
+    const [itemClicked, setItemClicked] = useState(false);
+
+    const searchResultsRef = useRef(null);
 
     const fetchSearchResults = async () => {
         setLoading(true);
@@ -40,7 +43,34 @@ function Nav() {
         }
     };
 
+    const handleItemClick = () => {
+        setItemClicked(true);
+        setShowResults(false);
+
+        setTimeout(() => {
+            setItemClicked(false);
+        }, 100);
+    };
+
     useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Close search results if clicked outside
+            if (searchResultsRef.current && !searchResultsRef.current.contains(event.target)) {
+                setShowResults(false);
+            }
+        };
+
+        const handleEscapeKey = (event) => {
+            // Close search results on Esc key press
+            if (event.key === 'Escape') {
+                setShowResults(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleEscapeKey);
+
+
         if (query.trim() === '') {
             setResults([]);
             setLoading(false);
@@ -50,7 +80,11 @@ function Nav() {
 
         const delayDebounce = setTimeout(fetchSearchResults, 500);
 
-        return () => clearTimeout(delayDebounce);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleEscapeKey);
+            clearTimeout(delayDebounce);
+        }
     }, [query]);
 
 
@@ -58,7 +92,7 @@ function Nav() {
     return (
         <nav>
             <Link to={`/`}>
-                <img src="/Logo.png" alt="" className="header-logo" />
+                <img src={logoSrc} alt="" className="header-logo" />
             </Link>
             <div>
                 <div>
@@ -71,12 +105,12 @@ function Nav() {
                         onKeyUp={handleKeyUp}
                     />
 
-                    <div className={`search-results shadow ${showResults ? '' : 'd-none'}`}>
+                    <div className={`search-results shadow ${showResults && !itemClicked ? '' : 'd-none'}`} ref={searchResultsRef}>
                         {loading ? (
                             <p>Loading...</p>
                         ) : (
                             results.map((movie) => (
-                                <div className='search-card' key={movie.id}>
+                                <div className='search-card' key={movie.id} onClick={handleItemClick}>
                                     <Link to={`/movies/${movie.id}`}>
                                         <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className='shadow movie-poster img-fluid' alt="" data-test-id="movie-poster" />
                                     </Link>

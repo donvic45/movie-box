@@ -306,6 +306,7 @@ footer {
 
 .details-nav .searchbar {
   border: 2px solid var(--gray-300, #333333);
+  color: #333333;
 }
 
 .details-nav .searchbar::placeholder {

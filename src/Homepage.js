@@ -10,7 +10,7 @@ import Nav from './Nav';
 function Homepage() {
     return (
         <div>
-            <Nav />
+            <Nav logoSrc="/Logo.png" />
             <Carousel />
             <div class="main-content">
                 <div class="d-flex justify-content-between mb-5 tag-line">
